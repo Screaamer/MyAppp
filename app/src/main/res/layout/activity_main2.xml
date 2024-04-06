@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".MainActivity2">
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="60sp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15sp"
+        android:layout_marginTop="15sp"
+        android:layout_marginEnd="15sp"
+        android:backgroundTint="@color/main_color1"
+        android:text="✕"
+        android:textColor="@color/text"
+        android:elevation="10dp"
+    />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/button4">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <LinearLayout
+                android:id="@+id/layout1"
+                android:layout_width="match_parent"
+                android:layout_height="200sp"
+                android:orientation="vertical"
+                android:layout_margin="15sp"
+                android:layout_below="@+id/button4"
+                android:background="@drawable/button_background"
+                android:elevation="10dp">
+
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15sp"
+                    android:layout_marginTop="10sp"
+                    android:text="Куда?"
+                    android:textColor="@color/text"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/editTextText2"
+                    android:layout_width="300sp"
+                    android:layout_height="50sp"
+                    android:layout_marginLeft="15sp"
+                    android:layout_marginTop="7sp"
+                    android:background="@drawable/edit_text_border"
+                    android:inputType="text"
+                    android:hint="Поиск направлений..."
+                    android:textAlignment="center"
+                    android:textColor="@color/text" />
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/button5"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:backgroundTint="@color/main_color1"
+                        android:text="Когда"
+                        android:textColor="@color/text"
+                        android:textAlignment="viewStart" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layout1"
+                android:layout_marginStart="15sp"
+                android:layout_marginTop="15sp"
+                android:layout_marginEnd="15sp"
+                android:layout_marginBottom="15sp"
+                android:background="@drawable/button_background"
+                android:orientation="vertical"
+                android:elevation="10dp">
+
+
+                <Button
+                    android:id="@+id/button2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:backgroundTint="@color/main_color1"
+                    android:text="Когда"
+                    android:textColor="@color/text"
+                    android:textAlignment="viewStart" />
+
+                <CalendarView
+                    android:id="@+id/calendarView1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@id/layout2"
+                    android:textColor="@color/text"
+                    tools:visibility="gone" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/layout3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layout2"
+                android:layout_marginStart="15sp"
+                android:layout_marginTop="15sp"
+                android:layout_marginEnd="15sp"
+                android:layout_marginBottom="15sp"
+                android:background="@drawable/button_background"
+                android:orientation="vertical"
+                android:elevation="10dp">
+
+                <Button
+                    android:id="@+id/button3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/main_color1"
+                    android:text="@string/Who"
+                    android:textColor="@color/text"
+                    android:textAlignment="viewStart" />
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/parents" />
+
+                    <Button
+                        android:id="@+id/button1.1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="-"
+                        />
+
+                    <TextView
+                        android:id="@+id/textView2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="TextView"
+                        android:textAlignment="viewEnd" />
+
+                    <Button
+                        android:id="@+id/button1.2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="+" />
+                </LinearLayout>
+
+
+
+
+            </LinearLayout>
+
+    </LinearLayout>
+    </ScrollView>
+</RelativeLayout>
