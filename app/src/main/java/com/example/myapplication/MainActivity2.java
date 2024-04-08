@@ -1,5 +1,6 @@
 package com.example.myapplication;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -14,6 +15,9 @@ public class MainActivity2 extends AppCompatActivity {
     private Button button2;
     private Button button4;
     private CalendarView calendarView1;
+    private  int Date_Year;
+    private  int Date_Month;
+    private  int Date_DayOfMonth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,6 +44,14 @@ public class MainActivity2 extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity2.this, MainActivity.class);
                 startActivity(intent);
+            }
+        });
+        calendarView1.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
+            @Override
+            public void onSelectedDayChange(@NonNull CalendarView calendarView, int i, int i1, int i2) {
+                Date_Year = i;
+                Date_Month = i1;
+                Date_DayOfMonth = i2;
             }
         });
     }
