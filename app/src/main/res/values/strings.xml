@@ -7,5 +7,6 @@
     <string name="count_of_guests4">0</string>
     <string name="Who">Кто</string>
     <string name="parents">Взрослые</string>
+    <string name="parents1">Дети</string>
     <string name="Dates"> </string>
 </resources>
