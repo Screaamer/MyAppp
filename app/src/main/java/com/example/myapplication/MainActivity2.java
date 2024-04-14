@@ -25,17 +25,19 @@ public class MainActivity2 extends AppCompatActivity {
     private LinearLayout layoutb5;
     private LinearLayout layoutc1;
     private LinearLayout layoutc2;
-
     private LinearLayout layoutc3;
     private LinearLayout layoutc4;
     private LinearLayout layout7;
+    private LinearLayout layout8;
     private Button button4;
-    private Button button3;
     private CalendarView calendarView1;
     private  int Date_Year;
     private  int Date_Month;
     private  int Date_DayOfMonth;
     private TextView TextView7;
+    private TextView TextView2;
+    private TextView TextView5;
+    private TextView TextView9;
     private TextView Text3;
     private TextView Text4;
     private int flag;
@@ -60,8 +62,11 @@ public class MainActivity2 extends AppCompatActivity {
         layoutc3 = findViewById(R.id.layoutc3);
         layoutc4 = findViewById(R.id.layoutc4);
         layout7 = findViewById(R.id.layout7);
-        button3 = findViewById(R.id.button3);
+        layout8 = findViewById(R.id.layout8);
         TextView7 = findViewById(R.id.textView7);
+        TextView2 = findViewById(R.id.textView2);
+        TextView5 = findViewById(R.id.textView5);
+        TextView9 = findViewById(R.id.textView9);
         Text3 = findViewById(R.id.text3);
         Text4 = findViewById(R.id.text4);
         amount1 = 0;
@@ -143,7 +148,7 @@ public class MainActivity2 extends AppCompatActivity {
                 }
             }
         });
-        button3.setOnClickListener(new View.OnClickListener() {
+        layout8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (layout7.getVisibility() == View.VISIBLE) {
@@ -168,6 +173,19 @@ public class MainActivity2 extends AppCompatActivity {
             public void onClick(View view) {
                 if (amount1 > 0){
                     amount1 -= 1;
+                    TextView2.setText(amount1 + "");
+                    if (amount1 > 0 && amount2 > 0){
+                        TextView9.setText("Взрослые: " + amount1 + " Дети: " + amount2);
+                    }
+                    if (amount1 > 0 && amount2 == 0){
+                        TextView9.setText("Взрослые: " + amount1);
+                    }
+                    if (amount1== 0 && amount2 > 0){
+                        TextView9.setText(" Дети: " + amount2);
+                    }
+                    if (amount1 == 0 && amount2 ==0){
+                        TextView9.setText("");
+                    }
                 }
                 if (amount1 == 0){
                     layoutc1.setBackground(getResources().getDrawable(R.drawable.button_background5));
@@ -181,6 +199,19 @@ public class MainActivity2 extends AppCompatActivity {
                 amount1 += 1;
                 layoutc1.setBackground(getResources().getDrawable(R.drawable.button_background4));
                 Text3.setTextColor(color2);
+                TextView2.setText(amount1 + "");
+                if (amount1 > 0 && amount2 > 0){
+                    TextView9.setText("Взрослые: " + amount1 + " Дети: " + amount2);
+                }
+                if (amount1 > 0 && amount2 == 0){
+                    TextView9.setText("Взрослые: " + amount1);
+                }
+                if (amount1== 0 && amount2 > 0){
+                    TextView9.setText(" Дети: " + amount2);
+                }
+                if (amount1 == 0 && amount2 ==0){
+                    TextView9.setText("");
+                }
             }
         });
         layoutc3.setOnClickListener(new View.OnClickListener() {
@@ -188,10 +219,23 @@ public class MainActivity2 extends AppCompatActivity {
             public void onClick(View view) {
                 if (amount2 > 0){
                     amount2 -= 1;
+                    TextView5.setText(amount2 + "");
+                    if (amount1 > 0 && amount2 > 0){
+                        TextView9.setText("Взрослые: " + amount1 + " Дети: " + amount2);
+                    }
+                    if (amount1 > 0 && amount2 == 0){
+                        TextView9.setText("Взрослые: " + amount1);
+                    }
+                    if (amount1== 0 && amount2 > 0){
+                        TextView9.setText(" Дети: " + amount2);
+                    }
+                    if (amount1 == 0 && amount2 ==0){
+                        TextView9.setText("");
+                    }
                 }
                 if (amount2 == 0){
                     layoutc3.setBackground(getResources().getDrawable(R.drawable.button_background5));
-                    Text3.setTextColor(color1);
+                    Text4.setTextColor(color1);
                 }
             }
         });
@@ -200,7 +244,20 @@ public class MainActivity2 extends AppCompatActivity {
             public void onClick(View view) {
                 amount2 += 1;
                 layoutc3.setBackground(getResources().getDrawable(R.drawable.button_background4));
-                Text3.setTextColor(color2);
+                Text4.setTextColor(color2);
+                TextView5.setText(amount2 + "");
+                if (amount1 > 0 && amount2 > 0){
+                    TextView9.setText("Взрослые: " + amount1 + " Дети: " + amount2);
+                }
+                if (amount1 > 0 && amount2 == 0){
+                    TextView9.setText("Взрослые: " + amount1);
+                }
+                if (amount1== 0 && amount2 > 0){
+                    TextView9.setText(" Дети: " + amount2);
+                }
+                if (amount1 == 0 && amount2 ==0){
+                    TextView9.setText("");
+                }
             }
         });
     }
