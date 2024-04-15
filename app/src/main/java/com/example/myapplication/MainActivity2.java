@@ -38,6 +38,7 @@ public class MainActivity2 extends AppCompatActivity {
     private TextView TextView2;
     private TextView TextView5;
     private TextView TextView9;
+    private TextView TextView10;
     private TextView Text3;
     private TextView Text4;
     private int flag;
@@ -67,6 +68,7 @@ public class MainActivity2 extends AppCompatActivity {
         TextView2 = findViewById(R.id.textView2);
         TextView5 = findViewById(R.id.textView5);
         TextView9 = findViewById(R.id.textView9);
+        TextView10 = findViewById(R.id.textView10);
         Text3 = findViewById(R.id.text3);
         Text4 = findViewById(R.id.text4);
         amount1 = 0;
@@ -258,6 +260,26 @@ public class MainActivity2 extends AppCompatActivity {
                 if (amount1 == 0 && amount2 ==0){
                     TextView9.setText("");
                 }
+            }
+        });
+        TextView10.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                layoutb1.setBackground(getResources().getDrawable(R.drawable.button_background2));
+                layoutb2.setBackground(getResources().getDrawable(R.drawable.button_background2));
+                layoutb3.setBackground(getResources().getDrawable(R.drawable.button_background2));
+                layoutb4.setBackground(getResources().getDrawable(R.drawable.button_background2));
+                layoutb5.setBackground(getResources().getDrawable(R.drawable.button_background2));
+                flag = 0;
+                amount1 = 0;
+                amount2 = 0;
+                TextView9.setText("");
+                layoutc1.setBackground(getResources().getDrawable(R.drawable.button_background5));
+                Text3.setTextColor(color1);
+                layoutc3.setBackground(getResources().getDrawable(R.drawable.button_background5));
+                Text4.setTextColor(color1);
+                TextView2.setText(amount1 + "");
+                TextView5.setText(amount2 + "");
             }
         });
     }

@@ -6,11 +6,14 @@
     android:layout_height="match_parent"
     android:background="@color/background"
     tools:context=".MainActivity2">
-
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
     <Button
         android:id="@+id/button4"
         android:layout_width="60sp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginStart="15sp"
         android:layout_marginTop="15sp"
         android:layout_marginEnd="15sp"
@@ -18,11 +21,15 @@
         android:text="✕"
         android:textColor="@color/text"
         android:elevation="10dp"
+        android:layout_weight="7"
     />
     <ScrollView
+        android:id="@+id/ScrollView1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/button4">
+        android:layout_height="0dp"
+        android:layout_below="@id/button4"
+        android:layout_weight="80"
+        >
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -320,6 +327,7 @@
                             android:background="@drawable/button_background4"
                             >
                             <TextView
+
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:text="+"
@@ -330,10 +338,46 @@
                         </LinearLayout>
                     </LinearLayout>
                 </LinearLayout>
-
-
             </LinearLayout>
-
     </LinearLayout>
     </ScrollView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_below="@id/ScrollView1"
+        android:orientation="horizontal"
+        android:layout_weight="11"
+        >
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20sp"
+            android:gravity="center_vertical"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text"
+                android:text="Очистить" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="80sp"
+            android:layout_height="40sp"
+            android:background="@drawable/button_background6"
+            android:layout_marginRight="30sp"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/main_color1"
+                android:gravity="center"
+                android:text="Поиск" />
+        </LinearLayout>
+    </LinearLayout>
+    </LinearLayout>
 </RelativeLayout>
