@@ -28,6 +28,7 @@ public class MainActivity2 extends AppCompatActivity {
     private LinearLayout layoutc3;
     private LinearLayout layoutc4;
     private LinearLayout layout7;
+    private LinearLayout layout9;
     private LinearLayout layout8;
     private Button button4;
     private CalendarView calendarView1;
@@ -64,6 +65,7 @@ public class MainActivity2 extends AppCompatActivity {
         layoutc4 = findViewById(R.id.layoutc4);
         layout7 = findViewById(R.id.layout7);
         layout8 = findViewById(R.id.layout8);
+        layout9 = findViewById(R.id.layout9);
         TextView7 = findViewById(R.id.textView7);
         TextView2 = findViewById(R.id.textView2);
         TextView5 = findViewById(R.id.textView5);
@@ -280,6 +282,15 @@ public class MainActivity2 extends AppCompatActivity {
                 Text4.setTextColor(color1);
                 TextView2.setText(amount1 + "");
                 TextView5.setText(amount2 + "");
+            }
+        });
+        layout9.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent1 = new Intent(MainActivity2.this,MainActivity4.class);
+                intent1.putExtra("amount1",amount1);
+                intent1.putExtra("amount2",amount2);
+                startActivity(intent1);
             }
         });
     }
