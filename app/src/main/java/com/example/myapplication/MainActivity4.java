@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import java.security.PrivateKey;
@@ -18,13 +19,18 @@ public class MainActivity4 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main4);
-        amount1 = savedInstanceState.getInt("amount1");
-        amount2 = savedInstanceState.getInt("amount2");
+        Intent intent = getIntent();
+        amount1 = intent.getIntExtra("amount1", 0);
+        amount2 = intent.getIntExtra("amount2", 0);
+
         List1 = findViewById(R.id.Recyclerview1);
+
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         List1.setLayoutManager(layoutManager);
+
         List1.setHasFixedSize(true);
-        listAdapter = new ListAdapter(100);
+
+        listAdapter = new ListAdapter(100, amount1, amount2);
         List1.setAdapter(listAdapter);
 
 
