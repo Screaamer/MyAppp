@@ -6,11 +6,14 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 
+import java.security.PrivateKey;
+
 public class MainActivity4 extends AppCompatActivity {
     private int amount1;
     private int amount2;
     private RecyclerView List1;
     private ListAdapter listAdapter;
+    private int a;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
