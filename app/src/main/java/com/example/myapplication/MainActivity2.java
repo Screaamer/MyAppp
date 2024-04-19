@@ -288,8 +288,8 @@ public class MainActivity2 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent1 = new Intent(MainActivity2.this,MainActivity4.class);
-                intent1.putExtra("amount1",amount1);
-                intent1.putExtra("amount2",amount2);
+                intent1.putExtra("amount1", amount1);
+                intent1.putExtra("amount2", amount2);
                 startActivity(intent1);
             }
         });
