@@ -68,7 +68,7 @@ public class MainActivity3 extends AppCompatActivity {
             public void onClick(View view) {
                 address = EditTextText.getText().toString();
                 Apartment apartment = new Apartment(id, landlord, address, maxAmount);
-                myDatabaseApartments.push().setValue(apartment);
+                myDatabaseApartments.push().setValue(apartment);W
             }
         });
 
