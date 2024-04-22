@@ -19,13 +19,15 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ListViewHolder
     private int amount1;
     private int amount2;
     private Context parent;
+    private MainActivity4.MyIntentInterface myInt;
 
-    public ListAdapter(int ListOfItems, Context parent , int amount1, int amount2) {
+    public ListAdapter(int ListOfItems, Context parent , int amount1, int amount2, MainActivity4.MyIntentInterface myInt) {
         ListItems = ListOfItems;
         this.amount1 = amount1;
         this.amount2 = amount2;
         viewHolderCount = 0;
         this.parent = parent;
+        this.myInt = myInt;
     }
     @NonNull
     @Override
@@ -64,7 +66,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ListViewHolder
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    
+                    myInt.MyIntent();
                 }
             });
         }

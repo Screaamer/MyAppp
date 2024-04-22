@@ -1,13 +1,13 @@
 package com.example.myapplication;
 
 public class Apartment {
-    public String id, landlord, address;
-    public int maxAmount;
+    public String landlord, address;
+    public int id, maxAmount;
     public Apartment(){
 
     }
 
-    public Apartment(String id, String landlord, String address, int maxAmount) {
+    public Apartment(int id, String landlord, String address, int maxAmount) {
         this.id = id;
         this.landlord = landlord;
         this.address = address;

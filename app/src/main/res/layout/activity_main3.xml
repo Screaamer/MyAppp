@@ -28,7 +28,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10sp"
-            android:text="@string/parents"
+            android:text="..."
             android:textColor="@color/text"
             android:layout_weight="1"/>
         <LinearLayout

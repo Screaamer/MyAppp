@@ -32,12 +32,19 @@ public class MainActivity4 extends AppCompatActivity {
 
         List1.setHasFixedSize(true);
 
-        listAdapter = new ListAdapter(100, this , amount1, amount2);
+        MyIntentInterface myInt = new MyIntentInterface() {
+            @Override
+            public void MyIntent() {
+                Intent intent = new Intent(MainActivity4.this, MainActivity5.class);
+                startActivity(intent);
+            }
+        };
+        listAdapter = new ListAdapter(100, this , amount1, amount2, myInt);
         List1.setAdapter(listAdapter);
 
+
     }
-    public void MyOnClick(View view){
-        Intent intent = new Intent(MainActivity4.this, MainActivity3.class);
-        startActivity(intent);
+    public interface MyIntentInterface{
+        void MyIntent();
     }
 }

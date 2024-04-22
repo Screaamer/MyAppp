@@ -17,8 +17,8 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class MainActivity3 extends AppCompatActivity {
     private DatabaseReference myDatabaseApartments;
-    public String id, landlord, address;
-    public int maxAmount;
+    public String landlord, address;
+    public int id, maxAmount;
     private EditText EditTextText;
     private LinearLayout layoutc1;
     private LinearLayout layoutc2;
@@ -67,8 +67,9 @@ public class MainActivity3 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 address = EditTextText.getText().toString();
-                Apartment apartment = new Apartment(id, landlord, address, maxAmount);
-                myDatabaseApartments.push().setValue(apartment);W
+                id = 1;
+                Apartment apartment = new Apartment(id,  landlord, address, maxAmount);
+                myDatabaseApartments.push().setValue(apartment);
             }
         });
 
