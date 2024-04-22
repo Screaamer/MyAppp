@@ -4,8 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import java.security.PrivateKey;
 
@@ -30,9 +32,12 @@ public class MainActivity4 extends AppCompatActivity {
 
         List1.setHasFixedSize(true);
 
-        listAdapter = new ListAdapter(100, amount1, amount2);
+        listAdapter = new ListAdapter(100, this , amount1, amount2);
         List1.setAdapter(listAdapter);
 
-
+    }
+    public void MyOnClick(View view){
+        Intent intent = new Intent(MainActivity4.this, MainActivity3.class);
+        startActivity(intent);
     }
 }

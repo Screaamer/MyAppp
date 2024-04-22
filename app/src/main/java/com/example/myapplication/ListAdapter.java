@@ -1,10 +1,14 @@
 package com.example.myapplication;
 
+import static androidx.core.content.ContextCompat.startActivity;
+
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -14,12 +18,14 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ListViewHolder
     private int ListItems;
     private int amount1;
     private int amount2;
+    private Context parent;
 
-    public ListAdapter(int ListOfItems, int amount1, int amount2) {
+    public ListAdapter(int ListOfItems, Context parent , int amount1, int amount2) {
         ListItems = ListOfItems;
         this.amount1 = amount1;
         this.amount2 = amount2;
         viewHolderCount = 0;
+        this.parent = parent;
     }
     @NonNull
     @Override
@@ -32,10 +38,9 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ListViewHolder
         View view = inflater.inflate(list_item, parent, false);
 
         ListViewHolder viewHolder = new ListViewHolder(view);
-        viewHolder.viewHolderIndex.setText("Index" + amount1 + amount2);
+        viewHolder.viewHolderIndex.setText("Index" + viewHolderCount);
         viewHolderCount++;
         return viewHolder;
-
     }
 
     @Override
@@ -56,6 +61,12 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ListViewHolder
             super(itemView);
             textView1 = itemView.findViewById(R.id.textView1);
             viewHolderIndex = itemView.findViewById(R.id.viewHolderIndex);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    
+                }
+            });
         }
         void bind(int listIndex){
             textView1.setText(String.valueOf(listIndex));

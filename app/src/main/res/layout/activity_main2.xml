@@ -54,7 +54,6 @@
                     android:text="Куда?"
                     android:textColor="@color/text"
                     android:textSize="20sp" />
-
                 <EditText
                     android:id="@+id/editTextText2"
                     android:layout_width="300sp"
@@ -366,7 +365,7 @@
         <LinearLayout
             android:id="@+id/layout9"
             android:layout_width="100sp"
-            android:layout_height="50sp"
+            android:layout_height="45sp"
             android:background="@drawable/button_background6"
             android:layout_marginRight="30sp"
             android:layout_gravity="center"
