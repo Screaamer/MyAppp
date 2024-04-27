@@ -17,6 +17,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class MainActivity3 extends AppCompatActivity {
     private DatabaseReference myDatabaseApartments;
+    private DatabaseReference myDatabaseLastApatmentId;
     public String landlord, address;
     public int id, maxAmount;
     private EditText EditTextText;
@@ -26,6 +27,7 @@ public class MainActivity3 extends AppCompatActivity {
     private TextView TextView2;
     private Button button1;
     private String APARTMENTS = "Apartments";
+    private String LASTAPARTMENTID = "lastApartmentId";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,8 +41,10 @@ public class MainActivity3 extends AppCompatActivity {
 
         int color1 = ContextCompat.getColor(this, R.color.gray);
         int color2 = ContextCompat.getColor(this, R.color.text);
+        id = 0;
 
         myDatabaseApartments = FirebaseDatabase.getInstance().getReference(APARTMENTS);
+        myDatabaseLastApatmentId = FirebaseDatabase.getInstance().getReference(LASTAPARTMENTID);
         layoutc1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -67,9 +71,10 @@ public class MainActivity3 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 address = EditTextText.getText().toString();
-                id = 1;
-                Apartment apartment = new Apartment(id,  landlord, address, maxAmount);
+                id++;
+                Apartment apartment = new Apartment(id, landlord, address, maxAmount);
                 myDatabaseApartments.push().setValue(apartment);
+                myDatabaseLastApatmentId.push().setValue(id);
             }
         });
 
